@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!-- Copyright (c) 2016-present Sonatype, Inc. All rights reserved. This 
 	program is licensed to you under the Apache License Version 2.0, and you 
 	may not use this file except in compliance with the Apache License Version 
@@ -7,6 +8,9 @@
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
 	See the Apache License Version 2.0 for the specific language governing permissions 
 	and limitations there under. -->
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -15,6 +19,7 @@
 		<groupId>org.jenkins-ci.plugins</groupId>
 		<artifactId>plugin</artifactId>
 		<version>2.22</version>
+<<<<<<< HEAD
 	</parent>
 
 	<groupId>org.sonatype.nexus.ci</groupId>
@@ -74,6 +79,46 @@
 		<staging.progressTimeout>15</staging.progressTimeout>
 	</properties>
 
+=======
+		<relativePath />
+	</parent>
+	<groupId>sp.sd</groupId>
+	<artifactId>nexus-artifact-uploader</artifactId>
+	<version>2.10-SNAPSHOT</version>
+	<packaging>hpi</packaging>
+
+	<properties>
+		<jenkins.version>2.7</jenkins.version>
+		<java.level>7</java.level>
+		<slf4j.version>1.7.7</slf4j.version>
+		<findbugs-maven-plugin.version>3.0.2</findbugs-maven-plugin.version>
+	</properties>
+
+	<name>Nexus Artifact Uploader</name>
+	<description>Nexus Artifact Uploader is to upload artifact to Nexus Repo</description>
+	<url>https://wiki.jenkins-ci.org/display/JENKINS/Nexus+Artifact+Uploader</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://opensource.org/licenses/MIT</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>pskumar448</id>
+			<name>Suresh Kumar</name>
+			<email>pskumar448@gmail.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
+		<developerConnection>scm:git:git@github.com:jenkinsci/${project.artifactId}-plugin.git</developerConnection>
+		<url>http://github.com/jenkinsci/${project.artifactId}-plugin</url>
+		<tag>HEAD</tag>
+	</scm>
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 	<repositories>
 		<repository>
 			<id>repo.jenkins-ci.org</id>
@@ -87,6 +132,7 @@
 		</pluginRepository>
 	</pluginRepositories>
 
+<<<<<<< HEAD
 	<dependencyManagement>
 		<dependencies>
 			<!-- Dependency Management nexus-platform-plugin -->
@@ -241,10 +287,85 @@
 				<exclusion>
 					<groupId>junit</groupId>
 					<artifactId>junit-dep</artifactId>
+=======
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins.workflow</groupId>
+			<artifactId>workflow-step-api</artifactId>
+			<version>2.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>credentials</artifactId>
+			<version>2.1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>job-dsl</artifactId>
+			<version>1.41</version>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-settings-builder</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-api</artifactId>
+			<version>1.13.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-impl</artifactId>
+			<version>1.13.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-spi</artifactId>
+			<version>1.13.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-connector-asynchttpclient</artifactId>
+			<version>1.13.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-connector-file</artifactId>
+			<version>1.13.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-aether-provider</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-settings</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.sonatype.aether</groupId>
+			<artifactId>aether-connector-wagon</artifactId>
+			<version>1.13.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>sisu-guice</artifactId>
+					<groupId>org.sonatype.sisu</groupId>
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<scope>test</scope>
@@ -272,6 +393,85 @@
 			<version>0.7</version>
 			<scope>test</scope>
 		</dependency>
+=======
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-http</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+		<!-- New dependency to create script groovy -->
+
+		<dependency>
+			<groupId>org.jenkins-ci.main</groupId>
+			<artifactId>jenkins-core</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.main</groupId>
+			<artifactId>maven-plugin</artifactId>
+			<version>2.7</version>
+		</dependency>
+
+		<!-- dependency nexus-platrom-plugin -->
+		<dependency>
+			<groupId>com.sonatype.nexus</groupId>
+			<artifactId>nexus-platform-api</artifactId>
+			<version>1.4.20170414-164800.e1f9f41</version>
+			<classifier>internal</classifier>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.main</groupId>
+			<artifactId>jenkins-core</artifactId>
+			<version>${jenkins.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>credentials</artifactId>
+			<version>2.1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>plain-credentials</artifactId>
+			<version>1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins</groupId>
+			<artifactId>token-macro</artifactId>
+			<version>1.11</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci</groupId>
+			<artifactId>symbol-annotation</artifactId>
+			<version>1.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jenkins-ci.plugins.workflow</groupId>
+			<artifactId>workflow-step-api</artifactId>
+			<version>2.8</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+			<version>2.4.7</version>
+		</dependency>
+		<dependency>
+			<groupId>org.spockframework</groupId>
+			<artifactId>spock-core</artifactId>
+			<version>1.0-groovy-2.4</version>
+			<scope>test</scope>
+		</dependency>
+		
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 		<dependency>
 			<groupId>org.jenkins-ci.plugins.workflow</groupId>
 			<artifactId>workflow-job</artifactId>
@@ -290,6 +490,7 @@
 			<version>2.3</version>
 			<scope>test</scope>
 		</dependency>
+<<<<<<< HEAD
 		<dependency>
 			<groupId>org.jenkins-ci.plugins.workflow</groupId>
 			<artifactId>workflow-durable-task-step</artifactId>
@@ -382,6 +583,14 @@
 					<version>1.7</version>
 				</plugin>
 				<plugin>
+=======
+	</dependencies>
+	<build>
+		<!-- plugin manager nexus-platform-plugin -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
 					<configuration>
@@ -401,6 +610,7 @@
 						</rules>
 					</configuration>
 				</plugin>
+<<<<<<< HEAD
 				<plugin>
 					<groupId>org.jvnet.localizer</groupId>
 					<artifactId>maven-localizer-plugin</artifactId>
@@ -434,10 +644,33 @@
 					<artifactId>maven-gpg-plugin</artifactId>
 					<version>1.6</version>
 				</plugin>
+=======
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 			</plugins>
 		</pluginManagement>
 		<plugins>
 			<plugin>
+<<<<<<< HEAD
+=======
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<skipTests>true</skipTests>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jenkins-ci.tools</groupId>
+				<artifactId>maven-hpi-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<compatibleSinceVersion>2.8</compatibleSinceVersion>
+				</configuration>
+			</plugin>
+			
+			<!-- plugin nexus-platform-plugin -->
+			<plugin>
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 				<artifactId>maven-compiler-plugin</artifactId>
 				<!-- 2.8.0-01 and later require maven-compiler-plugin 3.1 or higher -->
 				<version>3.1</version>
@@ -459,6 +692,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
+<<<<<<< HEAD
 
 			<plugin>
 				<groupId>com.mycila</groupId>
@@ -612,4 +846,19 @@
 			</build>
 		</profile>
 	</profiles>
+=======
+			<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>findbugs-maven-plugin</artifactId>
+					<version>${findbugs-maven-plugin.version}</version>
+					<configuration>
+						<effort>Max</effort>
+						<threshold>High</threshold>
+						<xmlOutput>true</xmlOutput>
+						<failOnError>true</failOnError>
+					</configuration>
+				</plugin>
+		</plugins>
+	</build>
+>>>>>>> 325fdbaec619dc03cbe3f2a7225542b01eb59e31
 </project>
